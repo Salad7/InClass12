@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">RealmIO</string>
+    <string-array name="spinnerItems">
+        <item>Groceries</item>
+        <item>Invoice</item>
+        <item>Transportation</item>
+        <item>Shopping</item>
+        <item>Rent</item>
+        <item>Trips</item>
+        <item>Utilities</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="spinnerActivity">
+        <item>Show All</item>
+        <item>Groceries</item>
+        <item>Invoice</item>
+        <item>Transportation</item>
+        <item>Shopping</item>
+        <item>Rent</item>
+        <item>Trips</item>
+        <item>Utilities</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="spinnerSort">
+        <item>Name</item>
+        <item>Alphabet</item>
+
+    </string-array>
+</resources>

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         list = (ListView) findViewById(R.id.list);
-        list.setAdapter(customAdapter);
+        ;
         realm.init(getApplicationContext());
         realm = Realm.getDefaultInstance();
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -57,13 +57,18 @@ public class MainActivity extends AppCompatActivity {
                 // Build the query looking at all users:
                 RealmQuery<Expense> query = realm.where(Expense.class);
                 // Add query conditions:
-                query.equalTo("expenseCat", "Groceries");
+                if(!spinner.getSelectedItem().toString().equals("Show All")) {
+                    query.equalTo("expenseCat", spinner.getSelectedItem().toString());
+                }
                 // Execute the query:
                 RealmResults<Expense> result1 = query.findAll();
-                Toast.makeText(getApplicationContext(),result1.get(0).getExpenseName(),Toast.LENGTH_SHORT).show();
-
+//                Toast.makeText(getApplicationContext(),result1.get(0).getExpenseName(),Toast.LENGTH_SHORT).show();
+                customAdapter = new CustomAdapter(getApplicationContext(),R.layout.custom_item,result1);
                 customAdapter.notifyDataSetChanged();
                 // Toast.makeText(getApplicationContext(),"Listener",Toast.LENGTH_SHORT).show();
+                list.setAdapter(customAdapter);
+                Toast.makeText(getApplicationContext(),result1.size()+"",Toast.LENGTH_SHORT).show();
+
             }
 
             @Override

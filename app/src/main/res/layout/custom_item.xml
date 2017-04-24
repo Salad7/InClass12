@@ -12,11 +12,15 @@
             android:text="Electricity Bill"
             android:layout_width="189dp"
             android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimary"
             android:id="@+id/nameTV" />
 
         <TextView
             android:text="80$"
             android:layout_width="match_parent"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimary"
             android:layout_height="wrap_content"
             android:id="@+id/amountTV"
             android:layout_weight="1" />
